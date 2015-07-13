@@ -6,7 +6,7 @@
 /*   By: flagoutt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/07/13 05:55:17 by flagoutt          #+#    #+#             */
-/*   Updated: 2015/07/13 09:19:30 by flagoutt         ###   ########.fr       */
+/*   Updated: 2015/07/13 09:34:42 by flagoutt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,8 @@ static int	fuckdanorm_again(char *buff, int sock, t_execdata *data)
 	}
 	else
 		return (0);
-	recv(sock, buff, BUFF_SIZE, 0);
+	usleep(100000);
+	recv(sock, buff, BUFF_SIZE, MSG_DONTWAIT);
 	ft_freetab(&(data->av));
 	free(data);
 	return (1);

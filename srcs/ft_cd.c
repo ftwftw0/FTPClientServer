@@ -6,7 +6,7 @@
 /*   By: flagoutt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/31 19:19:48 by flagoutt          #+#    #+#             */
-/*   Updated: 2015/07/13 06:51:56 by flagoutt         ###   ########.fr       */
+/*   Updated: 2015/07/13 09:33:05 by flagoutt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static void		relative_path(t_execdata *data, char *path)
 		ft_setenv(data, "PWD", buff, 1);
 	}
 	else
-		ft_triputstr("cd: no suck file or directory:", path, "\n");
+		ft_putstr_fd("cd: no suck file or directory", 2);
 	if (buff)
 		free(buff);
 	if (home)
